@@ -62,6 +62,7 @@ class LibSVMLoader
         [idx, val.to_f]
       end
       max_idx = ftvec.map { |el| el[0] }.max
+      max_idx ||= 0
       [label, ftvec, max_idx]
     end
 

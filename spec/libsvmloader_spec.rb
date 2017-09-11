@@ -2,29 +2,31 @@ require "spec_helper"
 
 RSpec.describe LibSVMLoader do
   let(:matrix_int) do
-    NMatrix.new([5, 4], [
+    NMatrix.new([6, 4], [
                 5, 3, 0, 8,
                 3, 1, 2, 0,
                 0, 0, 1, 0,
+                0, 0, 0, 0,
                 0, 0, 0, 2,
                 0, 4, 0, 5,], dtype: :int32)
   end
 
   let(:matrix_dbl) do
-    NMatrix.new([5, 4], [
+    NMatrix.new([6, 4], [
                 5.0, 3.1, 0.0, 8.4,
                 3.2, 1.2, 2.5, 0.0,
                 0.0, 0.0, 1.3, 0.0,
+                0.0, 0.0, 0.0, 0.0,
                 0.1, 0.0, 0.0, 2.56,
                 0.0, 4.8, 0.0, 5.12,], dtype: :float64)
   end
 
   let(:labels) do
-    NMatrix.new([5, 1], [1, 2, 2, 1, 0], dtype: :int32)
+    NMatrix.new([6, 1], [1, 2, 2, 1, 1, 0], dtype: :int32)
   end
 
   let(:target_variables) do
-    NMatrix.new([5, 1], [1.2, 2.0, 2.3, 1.1, 0.64], dtype: :float64)
+    NMatrix.new([6, 1], [1.2, 2.0, 2.3, 1.0, 1.1, 0.64], dtype: :float64)
   end
 
   it 'loads libsvm .t file containing double features for regression task' do
