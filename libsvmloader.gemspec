@@ -5,7 +5,7 @@ require "libsvmloader/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "libsvmloader"
-  spec.version       = LibSVMLoader::VERSION::STRING
+  spec.version       = LibSVMLoader::VERSION
   spec.authors       = ["yoshoku"]
   spec.email         = ["yoshoku@outlook.com"]
 
