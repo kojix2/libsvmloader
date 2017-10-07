@@ -16,18 +16,15 @@ class LibSVMLoader
     # @return [Array<NMatrix>]
     #   Returns array containing the (n_samples x n_features) matrix for feature vectors
     #   and (n_samples x 1) matrix for labels or target values.
-    def load_libsvm_file(filename, zero_based: false, stype: :yale,
-                         label_dtype: :int32, value_dtype: :float64)
+    def load_libsvm_file(filename, zero_based: false, stype: :yale, label_dtype: :int32, value_dtype: :float64)
       ftvecs = []
       labels = []
       n_features = 0
-      File.open(filename, 'r') do |file|
-        file.each_line do |line|
-          label, ftvec, max_idx = parse_libsvm_line(line, zero_based)
-          labels.push(label)
-          ftvecs.push(ftvec)
-          n_features = [n_features, max_idx].max
-        end
+      File.read(filename).split("\n").each do |line|
+        label, ftvec, max_idx = parse_libsvm_line(line, zero_based)
+        labels.push(label)
+        ftvecs.push(ftvec)
+        n_features = [n_features, max_idx].max
       end
       [convert_to_nmatrix(ftvecs, n_features, value_dtype, stype),
        NMatrix.new([labels.size, 1], labels, dtype: label_dtype)]
