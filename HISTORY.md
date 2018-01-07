@@ -1,3 +1,7 @@
+# 0.1.3
+- Changed the visibility of protected methods to the private.
+- Fixed the description in the gemspec file.
+
 # 0.1.2
 - Changed the way to read a file.
 
