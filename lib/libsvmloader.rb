@@ -48,7 +48,7 @@ class LibSVMLoader
       end
     end
 
-    protected
+    private
 
     def parse_libsvm_line(line, zero_based)
       tokens = line.split
