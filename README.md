@@ -1,6 +1,7 @@
 # LibSVMLoader
 
 [![Build Status](https://travis-ci.org/yoshoku/LibSVMLoader.svg?branch=master)](https://travis-ci.org/yoshoku/LibSVMLoader)
+[![Coverage Status](https://coveralls.io/repos/github/yoshoku/LibSVMLoader/badge.svg?branch=master)](https://coveralls.io/github/yoshoku/LibSVMLoader?branch=master)
 [![Gem Version](https://badge.fury.io/rb/libsvmloader.svg)](https://badge.fury.io/rb/libsvmloader)
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/yoshoku/LibSVMLoader/blob/master/LICENSE.txt)
 
@@ -32,7 +33,7 @@ samples, labels = LibSVMLoader.load_libsvm_file('foo.t')
 LibSVMLoader.dump_libsvm_file(samples, labels, 'bar.t')
 
 # for regression task
-samples, target_variables = LibSVMLoader.load_libsvm_file('foo.t', label_dtype: :float64)
+samples, target_variables = LibSVMLoader.load_libsvm_file('foo.t', label_dtype: 'float')
 LibSVMLoader.dump_libsvm_file(samples, target_variables, 'bar.t')
 ```
 
