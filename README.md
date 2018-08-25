@@ -37,6 +37,34 @@ samples, target_variables = LibSVMLoader.load_libsvm_file('foo.t', label_dtype: 
 LibSVMLoader.dump_libsvm_file(samples, target_variables, 'bar.t')
 ```
 
+When using with Numo::NArray:
+
+```ruby
+require 'libsvmloader'
+require 'numo/narray'
+
+samples, labels = LibSVMLoader.load_libsvm_file('foo.t')
+
+samples_na = Numo::NArray[*samples]
+labels_na = Numo::NArray[*labels]
+
+LibSVMLoader.dump_libsvm_file(samples_na.to_a, labels_na.to_a, 'bar.t')
+```
+
+When using with NMatrix:
+
+```ruby
+require 'libsvmloader'
+require 'nmatrix/nmatrix'
+
+samples, labels = LibSVMLoader.load_libsvm_file('foo.t')
+
+samples_nm = N[*samples]
+labels_nm = N[*labels]
+
+LibSVMLoader.dump_libsvm_file(samples_nm.to_a, labels_nm.to_a, 'bar.t')
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
