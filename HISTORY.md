@@ -1,3 +1,9 @@
+# 0.2.0
+## Breaking changes
+
+LibSVMLoader has been modified to return the samples and labels of dataset as Ruby Array.
+Thus, LibSVMLoader does not require NMatrix.
+
 # 0.1.3
 - Changed the visibility of protected methods to the private.
 - Fixed the description in the gemspec file.
