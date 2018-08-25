@@ -14,7 +14,7 @@ LibSVMLoader loads (and dumps) dataset file with the libsvm file format.
 MSG
   spec.description   = <<MSG
 LibSVMLoader is a class that loads (and dumps) dataset file with the libsvm file format.
-The sample matrix for feature vectors and target vector for labels are represented by the NMatrix format.
+The feature vectors and labels of dataset are represented by Ruby Array.
 MSG
   spec.homepage      = 'https://github.com/yoshoku/libsvmloader'
   spec.license       = 'MIT'
@@ -27,8 +27,6 @@ MSG
   spec.require_paths = ['lib']
 
   spec.required_ruby_version = '>= 2.1'
-
-  spec.add_runtime_dependency 'nmatrix', '~> 0.2.3'
 
   spec.add_development_dependency 'bundler', '~> 1.15'
   spec.add_development_dependency 'rake', '~> 10.0'
