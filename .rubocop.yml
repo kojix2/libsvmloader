@@ -6,3 +6,9 @@ Metrics/ModuleLength:
 
 Metrics/ClassLength:
   Max: 200
+
+Metrics/MethodLength:
+  Max: 40
+
+Style/FormatStringToken:
+  Enabled: false
