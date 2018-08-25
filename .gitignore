@@ -8,5 +8,14 @@
 /spec/reports/
 /tmp/
 
+
 # rspec failure tracking
 .rspec_status
+
+*.swp
+.DS_Store
+.ruby-version
+/spec/dump_cmp.t
+/spec/dump_dbl.t
+/spec/dump_int.t
+/spec/dump_zb.t
