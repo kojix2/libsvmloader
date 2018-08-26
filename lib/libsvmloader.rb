@@ -50,11 +50,15 @@ class LibSVMLoader
 
     def parse_libsvm_row(row, zero_based, label_type, value_type)
       label = convert_type(row.shift, label_type)
-      ftvec = row.map do |el|
+      adj_idx = zero_based == false ? 1 : 0
+      max_idx = -1
+      ftvec = []
+      while el = row.shift
         idx, val = el.split(':')
-        [idx.to_i - (zero_based == false ? 1 : 0), convert_type(val, value_type)]
+        idx = idx.to_i - adj_idx
+        max_idx = idx if max_idx < idx
+        ftvec.push([idx, convert_type(val, value_type)])
       end
-      max_idx = ftvec.map { |idx, _val| idx }.max || 0
       [label, ftvec, max_idx]
     end
 
