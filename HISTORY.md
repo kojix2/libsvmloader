@@ -1,3 +1,6 @@
+# 0.2.1
+- Fixed the bug that failed to load if there is a space at the end of the line.
+
 # 0.2.0
 ## Breaking changes
 
