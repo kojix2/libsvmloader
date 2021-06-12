@@ -1,3 +1,8 @@
+# 0.3.0
+- Add type declaration file: sig/libsvmloader.rbs
+- Refactor to avoid returning nil on array access.
+- Fix some configuration files.
+
 # 0.2.1
 - Fixed the bug that failed to load if there is a space at the end of the line.
 
