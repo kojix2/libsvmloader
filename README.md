@@ -1,7 +1,7 @@
 # LibSVMLoader
 
 [![Build Status](https://github.com/yoshoku/LibSVMLoader/workflows/build/badge.svg)](https://github.com/yoshoku/LibSVMLoader/actions?query=workflow%3Abuild)
-[![Coverage Status](https://coveralls.io/repos/github/yoshoku/LibSVMLoader/badge.svg?branch=master)](https://coveralls.io/github/yoshoku/LibSVMLoader?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/yoshoku/LibSVMLoader/badge.svg?branch=main)](https://coveralls.io/github/yoshoku/LibSVMLoader?branch=main)
 [![Gem Version](https://badge.fury.io/rb/libsvmloader.svg)](https://badge.fury.io/rb/libsvmloader)
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/yoshoku/LibSVMLoader/blob/main/LICENSE.txt)
 
