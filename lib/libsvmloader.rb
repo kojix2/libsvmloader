@@ -38,9 +38,9 @@ class LibSVMLoader
     # @param filename   [String]  Path to the output libsvm file.
     # @param zero_based [Boolean] Whether the column index starts from 0 (true) or 1 (false).
     def dump_libsvm_file(data, labels, filename, zero_based: false)
-      n_samples = [data.size, labels.size].min
-      label_format = detect_format(labels.first)
-      value_format = detect_format(data.flatten.first)
+      n_samples = data.size < labels.size ? data.size : labels.size
+      label_format = detect_format(labels[0])
+      value_format = detect_format(data.flatten[0])
       File.open(filename, 'w') do |file|
         n_samples.times { |n| file.puts(dump_libsvm_line(labels[n], data[n], label_format, value_format, zero_based)) }
       end
@@ -53,7 +53,7 @@ class LibSVMLoader
       adj_idx = zero_based == false ? 1 : 0
       max_idx = -1
       ftvec = []
-      while el = row.shift
+      while (el = row.shift)
         idx, val = el.split(':')
         idx = idx.to_i - adj_idx
         max_idx = idx if max_idx < idx
