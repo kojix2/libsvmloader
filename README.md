@@ -1,9 +1,9 @@
 # LibSVMLoader
 
-[![Build Status](https://travis-ci.org/yoshoku/LibSVMLoader.svg?branch=master)](https://travis-ci.org/yoshoku/LibSVMLoader)
+[![Build Status](https://github.com/yoshoku/LibSVMLoader/workflows/build/badge.svg)](https://github.com/yoshoku/LibSVMLoader/actions?query=workflow%3Abuild)
 [![Coverage Status](https://coveralls.io/repos/github/yoshoku/LibSVMLoader/badge.svg?branch=master)](https://coveralls.io/github/yoshoku/LibSVMLoader?branch=master)
 [![Gem Version](https://badge.fury.io/rb/libsvmloader.svg)](https://badge.fury.io/rb/libsvmloader)
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/yoshoku/LibSVMLoader/blob/master/LICENSE.txt)
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/yoshoku/LibSVMLoader/blob/main/LICENSE.txt)
 
 LibSVMLoader loads (and dumps) dataset file with the libsvm file format.
 
