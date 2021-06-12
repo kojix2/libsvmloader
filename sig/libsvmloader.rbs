@@ -1,0 +1,18 @@
+# LibSVMLoader loads (and dumps) dataset file with the libsvm file format.
+class LibSVMLoader
+  VERSION: String
+
+  def self.load_libsvm_file: (String filename, ?zero_based: bool zero_based,
+                              ?label_dtype: String label_dtype, ?value_dtype: String value_dtype) -> Array[Array[untyped]]
+  def self.dump_libsvm_file: (Array[Array[untyped]] data, Array[Numeric | String] labels, String filename,
+                              ?zero_based: bool zero_based) -> void
+
+  private
+
+  def self.parse_libsvm_row: (Array[String] row, bool zero_based, Symbol label_type, Symbol value_type) -> Array[untyped]
+  def self.parse_dtype: (String | Symbol dtype) -> Symbol
+  def self.convert_type: (untyped value, Symbol dtype) -> untyped
+  def self.convert_to_matrix: (Array[untyped] data, Integer n_features, Symbol value_type) -> Array[Array[untyped]]
+  def self.detect_format: (untyped data) -> String
+  def self.dump_libsvm_line: (Numeric | String label, Array[untyped] ftvec, String label_format, String value_format, bool zero_based) -> String
+end
